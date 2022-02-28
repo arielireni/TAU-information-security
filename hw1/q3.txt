@@ -1,0 +1,5 @@
+The purpose of this program is to concatenate the string in the source buffer (ESI) to the string in the destination buffer (EDI).
+
+In _LABLE1 we increment EDI until we reach the end of the buffer (which is when the value of the current character is zero).
+
+In _LABLE2 we copy the characters in ESI to the end of EDI until we reach the end of the source buffer (which is when the current values in both of the buffers are zero).
