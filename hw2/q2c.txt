@@ -1,0 +1,5 @@
+From the implementation:
+server_response.status == ATM.CODE_APPROVAL iff server_response.status == 1 (since CODE_APPROVAL = 1).
+Also, verify_number will return 1 iff fast_exponent_and_modulus returns 1.
+In our case: (1 ^ e) % n = 1 % n and therefore we will get this value for self.signature = 1.
+To summarize, ServerResponse with server_response.status = 1 and server_response.signature = 1 passes the verification of the ATM class.

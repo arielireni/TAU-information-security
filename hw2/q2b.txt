@@ -1,0 +1,4 @@
+As we learned in class, if e is small and the message M is small,
+(m ^ e) % n = m ^ e
+It's easy to verify that in the cards case m ^ e < n for every optional input (including 9^9),
+and therefore to decrypt the input we just need to calculate m ^ (1/e).
