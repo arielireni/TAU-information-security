@@ -1,0 +1,1 @@
+Preformed brute force as we saw in class, for all the 2**(8*key_length) options, and took the key which results and highest score.

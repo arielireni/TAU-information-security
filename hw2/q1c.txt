@@ -1,0 +1,7 @@
+In addition to the comments in the code, I used the frequencies of the letters in english, and preformed normalization to it by the forumla:
+
+frequency *
+(
+    (plaintext_length - char_count_repetitions) / 
+    plaintext_length
+)

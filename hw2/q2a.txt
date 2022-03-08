@@ -1,6 +1,2 @@
-As we learned in class, when the optional input us from a small set,
-we can preform brute force and try to encrypt all the optional inputs, 
-until we'll receive the same ciphertext as we have.
-Then we'll know its plaintext as requested in this question.
-Here, since PIN has only 4 digits, we'll try to encrypt all the PIN options
-until we will get the same ciphertext as we received as input.
+As we learned in class, when the optional input us from a small set, we can preform brute force and try to encrypt all the optional inputs, until we'll receive the same ciphertext as we have. Then we'll know its plaintext as requested in this question.
+Here, since PIN has only 4 digits, we'll try to encrypt all the PIN (4 digits 0-9) options until we will get the same ciphertext as we received as input.

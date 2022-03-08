@@ -1,0 +1,3 @@
+I used the method described here - https://carterbancroft.com/implementing-repeating-key-xor/.
+Therefore the compexity now is O(key_length* (2**8)) (much lower then the brute force).
+For the implemetation I took the method from q1d and changed it to check the highest score for each byte of the key.
