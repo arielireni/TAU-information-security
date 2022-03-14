@@ -1,0 +1,6 @@
+1. I found two dead zones in the readfile section. The first one (stating from loc_80485cd) is bigger than the second one (starting from loc_8048633).
+2. Therefore, in the first patch, I defined only the jump we will preform from the small dead zone to the big dead zone, and in the second dead zone I implemented the requested changes.
+In addition, in the second deadz one we first jump to loc_8048662 as we did in the original code, and only when we get to the small dead zone we jump back to the bigger one.
+3. For jump\call destination address I computed the offset by the formula:
+|offset (hex)|= |source_address_offset - destination_address_offset|, and then if destination > source address, I added '+' before the offset, and '-' otherwise (depands if we want to jump backwards or forwards).
+4. I used the code mentioned in the dummy section as a reference and copied it to the proper place in patch2.asm to implement the execution of the commands from the lines that start with #!.

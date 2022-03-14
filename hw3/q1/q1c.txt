@@ -1,0 +1,1 @@
+In this section, instead of changing the 2nd byte to be equal to the final a, I changed the last byte we loop on the last iteration, so that the new last val after xor with a in the lase iteration will result the 2nd byte of the input and therefore will pass the validation test.

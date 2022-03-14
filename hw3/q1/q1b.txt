@@ -1,0 +1,1 @@
+In this part, I preformed the same implementation as done in q1a, but if the final value of a != secondByte, I changed the value of the secondByte in the input to be equal to the final a I received.

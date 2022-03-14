@@ -1,0 +1,7 @@
+In order to change the program so that it will always return zero, I wanted to change the command:
+mov eax, 1
+to:
+mov eax, 0
+
+The above command is located in the 0x6DD offset of the binary, and setting the value is in the next byte. Therefore, I changed the value in the offset+1 (1758 in decimal) to 0 instead of 1.
+

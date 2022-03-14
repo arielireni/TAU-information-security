@@ -1,0 +1,6 @@
+In order to change the program so that it will always follow the valid code branch, I wanted to change the command:
+jnz short loc_80486E4
+to:
+jmp short loc_80486E4
+
+The above command is located in the 0x6CB offset of the binary, it its value is 75 (the opcode of jnz). Therefore, I changed the value in this offset to 235, which is the opcode of jmp.

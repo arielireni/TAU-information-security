@@ -1,0 +1,12 @@
+Code overview:
+1. The msgcheck program receives a message as an input.
+2. It takes the first byte of the message as the number of iterations we will preform in step 4.
+3. It saves the second byte of the message to the end of the program.
+4. Loop #firstByte times and preform: a = xor(a, currByte) from the third byte to the #firstByte+2 byte. Here a is initialized to 0xF7 in hex (247 in decimal).
+5. If the final value of a (after the loop) equals to the second byte we saved in step 3, the message is valid. Otherwise, the message is invalid.
+
+In the python program I have implemented the code above.
+
+Edge cases:
+If #firstByte > len(msg) -> xor a with 0.
+If read fails, print error message and exit.
