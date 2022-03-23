@@ -1,0 +1,2 @@
+If we will use the largest valid size for the password we pass to the sudo program, we will cause buffer overflow of one characher, since the buffer is initialized to size 20 (and for string of length 20 we need a buffer with length 21).
+Now, the last character in the password will become the value of the auth argument in the function check_password since it's the next argument in the stuck. Therefore every password we'll pass with length 10 and the last characher is equal to chr(1) will change the value of auth to 1 and pass the test.

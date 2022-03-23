@@ -1,0 +1,7 @@
+Similarly to what we have done in class:
+In the sudo program we initialize buff argument of size 65.
+Later in the program, we define the first 10 charachter of the buffer and then concat the password which passed to the program as an input to the the buffer.
+Therefore, if we will pass password of length > 55 we will receive a core dump, just like we saw in class.
+In my solution I used the password:
+AAAAA...NNNNNOOOOO 
+(length 75) and hence it caused a core dump as we expected.

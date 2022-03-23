@@ -1,0 +1,2 @@
+The solution is similar to the example we saw in class.
+In q2a we caused a core dump to the sudo program. By using gdb we can discover the sddress of the beginning of the buffer and the address that the program crashed on. By the second address, we know how many bytes the shellcode should have (and so we insert nop commands to the shellcode in order to get a shellcode of size 67 bytes), and then we add to the end of the shellcode (in bytes) the address of the beginning of the buffer, so the program will jump to it after crashing and run our shellcode successfully.
