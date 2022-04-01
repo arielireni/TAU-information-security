@@ -1,0 +1,1 @@
+As defined in the function read_data from the server's program, the buffer's size is 1024 and therefore if we will pass a message of length > 1024 we will get a core dump.

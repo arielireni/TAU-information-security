@@ -1,0 +1,10 @@
+Part 1:
+Loop over the shellcode bytes and compare them with ASCII_MAX value.
+Part 2:
+In order to initialize dl to 0xff I used push, pop and dec commands (since we're using 2's complement, 0-1 = 0xffffffff).
+In order to perform add instruction for eax + offset for each zored index I used inc.
+Then, I used all together in "xor byte ptr [eax + indices[i]], 0xff as descrived in the exercise.
+Part 3:
+Since ESP is right after the return address, the encoded shellcode will start 4 + len(encoded_shellcode) bytes under ESP. Therefore I used dec 4 + len(encoded_shellcode) times.
+Part 4:
+Since we can't use nop we'll use aas instruction. From the documentation: "the aas instruction is only useful when it follows a sub instruction" - and since we can't use sub too, we can use this instruction instead of the nops. The rest of the code in this part is very similar to q2.

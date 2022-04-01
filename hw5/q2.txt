@@ -1,0 +1,3 @@
+Using the core dump I received in the previous question, I found out that the buffer we read the message into results a core dump after reading 1040 characters. I wrote a shellcode of size 212 bytes which creates a connection to the c&c server and redirects STDIN, STDOUT, STRERR to the socket, and finnaly opens a shell.
+In the q2.py file I created the payload. The message size is 1040 + 4 bytes for return address + 1 byte for zero in the end. Also, the size of the nop slide is 828 (1040 - 212).
+
