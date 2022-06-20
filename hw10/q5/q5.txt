@@ -1,0 +1,8 @@
+In this question I used the fact that alice's validation is slow.
+The main idea is to run run.py with credentials that pass alice's validation, and during the time that takes to run the validation, change the value of the key 'command' in the json file to 'echo hacked'. In this way, alice will see a copy of example.json that as we know passes the validation, and bob will see the edited version of example.json and run the command 'echo hacked'.
+
+In the main function of q5.py, I created two threads. thread1 will call run.py by running the function call_file with a copy of the data that still contains the command 'echo cool'. thread2 will wait 3 seconds to make sure that thread1 already called run.py with the original version of example.json and then edit the command in the json to 'echo hacked' so until the validation finish, the json file will contain the new command and as part of thread1 bob will print hacked.
+
+References:
+https://www.pythontutorial.net/advanced-python/python-threading/
+https://www.adamsmith.haus/python/answers/how-to-update-a-json-file-in-python

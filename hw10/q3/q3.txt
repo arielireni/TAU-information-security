@@ -1,0 +1,1 @@
+Since bob didn't checked that username\password can be empty I passed the string '::echo hacked' so the validation check passed and the command executed succefully.

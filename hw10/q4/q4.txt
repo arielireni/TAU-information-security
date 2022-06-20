@@ -1,0 +1,5 @@
+In order to pass the validation function, I passed the same arguments as passed in the example.
+Then, since Bob isn't familiar with JSON, he searches the string 'command': 'something' in the data. 
+So in order to pass the validation and also make Bob print hacked, I passed in the beginning of the JSON a key named bob, which contains a key 'command' and value 'echo hacked'. 
+Since Bob isn't aware of the structure of the JSON he will find this string first, and alice will return that the command and signature from the beginning are valid.
+

@@ -1,0 +1,1 @@
+Since the function eval allows to evaluate aribitrary python expression from a string, I passed the string print('hacked'), so in validate_script the line data = eval(data) will print hacked and then exit with an error.
