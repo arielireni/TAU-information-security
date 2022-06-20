@@ -1,0 +1,9 @@
+Winston:
+In order to convert the string to bits I used https://www.geeksforgeeks.org/python-convert-string-to-binary/ as a referece.
+Then, I sent triples of bits through the packet's reserved bits, and used the seq value as serial number of the packets and the ack value as the tota amuont of packet we'll send.
+
+Julia:
+I used scapy sniff in order to sniff winston's packets.
+The function parse_packet will add the reserved bits of the received packets in the list bits. We'll finish with the sniff once the bits list has received the bits from all the packets (using stop_filter).
+After sniffing, I converted the bits back to string and returned it. In order to convert the bits to string I used https://www.geeksforgeeks.org/convert-binary-to-string-using-python/ and https://stackoverflow.com/questions/699866/python-int-to-binary-string as a reference.
+

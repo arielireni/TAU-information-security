@@ -1,0 +1,6 @@
+on_packet():
+I used dictionary data structure in order to store the data (syn_records). The keys are ip addresses and the values are lists of packets, which act like a queue (FIFO).
+In order to avoid errors in packets without TCP\IP I wrapped the whole code in try-catch blocks.
+
+I checked if the packet is a SYN packet (if not, finish). Then, for every packet we'll check if the source ip address is in syn_records. If so, we'll add the current packet, update the list of packets in syn_records for this specific ip (so it won't contain packets before the past 60 seconds), and if it contains more than 15 packets, we'll block this source. Otherwise, we'll update the list and syn_records as needed.
+

@@ -1,0 +1,6 @@
+generate_syn_packets(): 
+created a SYN packet using the 'S' flag for each port from the input ports as destination port and with the input ip as destination ip address.
+
+analyze_scan():
+answered is a list of tuples where every variable is (request packet, response packet). Therefore I looped on all the responses and checked the flags and added the values as needed. 'SA' indicates open, 'RA' indicates closed.
+unansered is a list of the packets we sent and by definition if packet didn't get response, it is filtered.

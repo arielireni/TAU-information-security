@@ -1,0 +1,2 @@
+on_packet():
+sent a SYN ACK packet (with 'SA' flag) similarly to what we've done in hw8 (replace source data with destintation data and update as needed)

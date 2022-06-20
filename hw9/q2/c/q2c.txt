@@ -1,0 +1,1 @@
+Same solution as done in q2a, but here I also used the function shannon_entropy (which was already implemented) in order to compute the entropy value and checked its value inside the if condition as well.

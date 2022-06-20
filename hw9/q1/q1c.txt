@@ -1,0 +1,2 @@
+Similarly what we saw in lecture 9, we can send to the firewall many SYN packets, with spoofed source ip and from different source ports (perform SYN Flooding).
+This can cause DoS attack since we'll receive half-open connections state maintaind by the OS until timeout on the FW side and therefore requests from legitimate clients will deny.

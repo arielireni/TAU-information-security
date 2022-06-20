@@ -1,0 +1,1 @@
+Similarly to what we've done in hw8, I checked if the content of the packet (Raw) contains the word 'love'. If so, we'll add the source ip address to the unpersons set (if this address already there, since it's a set it will remain the same)
