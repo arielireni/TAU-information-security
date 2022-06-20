@@ -1,0 +1,4 @@
+I used try-except blocks in both functions in order to avoid missing fields in the packets (if the required field is missing we will finish), if we get any type of error (reaching the except block) we don't return anything.
+In q1b I used packet.dport to verify http connection (by port 80).
+Also, for q1c I used the examples here https://stackoverflow.com/questions/39090366/how-to-parse-raw-http-request-in-python-3 in order to extract the required data.
+

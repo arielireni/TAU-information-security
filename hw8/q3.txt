@@ -1,0 +1,5 @@
+In is_packet_to_original_gateway I checked if the src ip address in the packet is different from ours (and hence was sent from a different machine), and also if the dst mac address is the same as the mac of the gateway (to verify it was sent to the network gateway).
+
+In create_poison, since we don't need to care about the Ethernet layer, I used this resource as a reference: https://medium.datadriveninvestor.com/arp-cache-poisoning-using-scapy-d6711ecbe112?gi=b5ae6312a40d, and passed the the same arguments as in the example in the link, but without the mac address.
+
+In is_stolen_packet I checked if the dst ip address in the packet is different from ours (meaning this packet was not supposed to be sent to us), and also if the dst mac address is the same as ours.

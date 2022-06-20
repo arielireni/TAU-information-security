@@ -1,0 +1,5 @@
+Since we receive packet from the victim to the server and we want to create a packet from the server to the victim, we'll use the details from the input packet in order to create the IP and TCP layers and then add the RESPONSE to this packet.
+Also, in order to close the connection, I used the flag AF (FYN).
+Verifying that we hijack only attempts to access the course website is the same as in q1.
+
+As mentioned in the q2.py file in a comment, I used this resource as a reference (specificaly line 136) - https://gist.github.com/N0dr4x/ffe99618a738978605719ce525a33042
