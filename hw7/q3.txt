@@ -1,0 +1,9 @@
+In order to find the GOT address, I used as we saw in class:
+objdump -D ./binaries/antivirus -M intel --section=.plt
+Then, I took the address written in the check_if_virus section:
+08049080 <check_if_virus@plt>, which is the address on the right column of the first row:
+ 8049030:	ff 25 0c c0 04 08    	jmp    DWORD PTR ds:0x804c00c
+
+Then, I searched for a function with the same signature as check_if_virus, that will always return 0 for this kind of input, which is the function is_directory. So I searched the address of this function (using gdb) and passed it as the alternative address.
+
+All the rest of the code is similar to the impelemetation I used in q2.

@@ -1,0 +1,5 @@
+In order to find the address to override I used gdb (with the antivirus binary file), set main as a breakpoint, ran the program in order to load the addresses of all the functions and finally ran disas check_if_virus (the address of this function is the address in the first row in the output of the command).
+
+Also, in order to replace this check_if_virus function with assembly code that always returns 0, I used the example here - https://medium.com/@jain.sm/code-injection-in-running-process-using-ptrace-d3ea7191a4be, with the shellcode which is xor eax, eax; ret in bytes.
+
+Then, in q2.py I used the same techniques from previous exercises and the python function find to find the index of the pid and the address in q2.template and replace them with the input pid and the address I found.

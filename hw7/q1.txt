@@ -1,0 +1,3 @@
+In payload_for_getting_antivirus_pid() I returned "pidof antivirus" in bytes.
+The command pidof <name> returns the pid of the process with the name passed as input. If the process wasn't found the output will be empty.
+Therefore the only thing to do in order to extract the pid is to convert it to int.

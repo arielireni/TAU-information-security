@@ -1,0 +1,13 @@
+In order to make all the read syscalls fail, I used PTRACE_SYSCALL, PTRACE_GETREGS and PTRACE_SETREGS.
+
+I used ptrace with PTRACE_SYSCALL in order to stop every sysccall while running our process.
+
+The syscall number is stored in register eax. The number of the read syscall is 3, and therefore I checked for every syscall which called as part of our code if it is read (meaning eax = 3).
+
+Then, in order to make the read fail everytime, I changed the value of the third argument (the length to read) which is stored in edx to invalid value = -1.
+
+In order to load the above registers, change their value and apply the changes I used PTRACE_GETREGS and PTRACE_SETREGS.
+
+Then, I called again ptrace with PTRACE_SYSCALL in order to continue running the process with the changes I made.
+
+All the rest of the code is similar to the implementation I used in q2 and q3.
