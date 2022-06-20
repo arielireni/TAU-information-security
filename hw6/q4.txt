@@ -1,0 +1,14 @@
+The password I passed (which includes the ROP) contains:
+offset (size 135 bytes)
+instruction: POP EBP -> set EBP to puts address
+instruction: jmp EBP -> wrote the address of ebp again in the stack
+instruction: ADD ESP, 4 -> make the stack point to the message pointer
+instruction: POP ESP -> set ESP back to the puts address to preform the next iteration
+the string "Tale me (ID) to your leader!" (the highest place in the stack)
+
+The loop works after we call puts since in the puts implementation we first push ebp into the stack the then put esp inside ebp, and before the end of it pop ebp again, which again contains the address of puts (as it was in the begining of the function). In the end of our rop we preform POP ESP which set to the address of puts and therefore we jump to puts again and get the loop we wanted.
+
+The 4-byte skip is necessary since when we're inside puts, we want esp to point to the string pointer, and therefore we need to move up in the stack with esp.
+
+As I mentioned, I stored the string (in bytes) in the end of the rop - which means the start of the stack.
+

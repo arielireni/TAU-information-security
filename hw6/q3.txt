@@ -1,0 +1,12 @@
+The combination of instructions I used:
+POP EAX (will be set to auth = 0x804a054)
+POP EDX (will be set to 0x1, EBX\ECX were not available)
+MOV [EAX], [EDX]
+
+The original return address (come back to after check_password) is 0x80488b0 - used disas main in gdb to find it.
+
+Then I send the password:
+string with size 135 to get until the return address +
+pop eax and right after its wanted value (same as we saw in class) +
+pop edx and right after its wanted value +
+mov [eax], edx used its RETURN from the search engine to pass right after the return address and print Victory! in the main function.

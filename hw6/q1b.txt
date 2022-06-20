@@ -1,0 +1,4 @@
+Using gdb and the core file created after running q1a.py, I found out that we write 135 bytes to the buffer until we receive the segmentation fault. 
+Now, as we learned in lecture 5, in order to open the shell using the return-to-libc technique we need to pass password that will contain: 
+offset (135 bytes)  -> system_address -> return_after_system_address -> /bin/sh address
+Since the program is allowed to crash after exiting the shell, I passed system_sddress again as the return_after_system_address.

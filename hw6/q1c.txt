@@ -1,0 +1,1 @@
+Same as q1b (and as we saw in lecture 5 slide 16), but now I passed the exit address to return after system and its argument after system's argument.
